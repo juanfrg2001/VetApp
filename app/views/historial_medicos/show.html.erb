@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Agenda:</strong>
+  <%= @historial_medico.agenda_id %>
+</p>
+
+<p>
+  <strong>Motivo consulta:</strong>
+  <%= @historial_medico.motivo_consulta %>
+</p>
+
+<p>
+  <strong>Fecha consulta:</strong>
+  <%= @historial_medico.fecha_consulta %>
+</p>
+
+<p>
+  <strong>Cdiagnostico:</strong>
+  <%= @historial_medico.cdiagnostico %>
+</p>
+
+<p>
+  <strong>Tratamiento seguir:</strong>
+  <%= @historial_medico.tratamiento_seguir %>
+</p>
+
+<%= link_to 'Edit', edit_historial_medico_path(@historial_medico) %> |
+<%= link_to 'Back', historial_medicos_path %>

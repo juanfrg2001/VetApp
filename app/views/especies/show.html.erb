@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @especy.raza %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @especy.genero %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @especy.edad %>
+</p>
+
+<p>
+  <strong>Esterilizado:</strong>
+  <%= @especy.esterilizado %>
+</p>
+
+<%= link_to 'Edit', edit_especy_path(@especy) %> |
+<%= link_to 'Back', especies_path %>

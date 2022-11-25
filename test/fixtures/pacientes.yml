@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sede: one
+  responsable: one
+  tipo_especie: one
+
+two:
+  sede: two
+  responsable: two
+  tipo_especie: two

@@ -1,0 +1,37 @@
+<%= form_with(model: especy) do |form| %>
+  <% if especy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(especy.errors.count, "error") %> prohibited this especy from being saved:</h2>
+
+      <ul>
+        <% especy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :raza %>
+    <%= form.text_field :raza %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genero %>
+    <%= form.text_field :genero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edad %>
+    <%= form.text_field :edad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :esterilizado %>
+    <%= form.text_field :esterilizado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
