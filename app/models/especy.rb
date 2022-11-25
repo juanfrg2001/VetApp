@@ -1,2 +1,0 @@
-class Especy < ApplicationRecord
-end
