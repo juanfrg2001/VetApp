@@ -1,27 +1,73 @@
-<div id="<%= dom_id diary %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Medical:</strong>
-    <%= diary.medical_id %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Pet:</strong>
-    <%= diary.pet_id %>
-  </p>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!--Container-->
+    <div class="container w-full mx-auto pt-20">
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Horario:</strong>
-    <%= diary.horario %>
-  </p>
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Fecha:</strong>
-    <%= diary.fecha %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this diary", diary, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this diary', edit_diary_path(diary), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+          <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                   <%= link_to 'Registra Una Cita', new_diary_path %>
+                  </button>
+                  </a>
+                  <table class="min-w-full text-center">
+                    <thead class="border-b bg-gray-800">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Medico
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Mascota
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Horario
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Fecha
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Mostrar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Editar
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                     
+                        <tr class="bg-white border-b">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= diary.id %></td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= diary.medical.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= diary.pet.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= diary.horario %>
+                          </td>
+                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= diary.fecha %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'MOSTRAR', diary %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Editar', edit_pet_path(diary), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                          </td>
+                      
+                        </tr class="bg-white border-b">
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+  </div>
 </div>

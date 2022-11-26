@@ -1,16 +1,104 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Medicals</h1>
-    <%= link_to 'New medical', new_medical_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-    <%= link_to 'New speciality', new_speciality_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-    <%= link_to 'New diary', new_diary_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!--Container-->
+    <div class="container w-full mx-auto pt-20">
+    
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
+                <a href="https://flowbite.com" class="flex items-center">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Medicos</span>
+                </a>
+            </div>
+        </nav>
+        <nav class="bg-gray-50 dark:bg-gray-700">
+            <div class="max-w-screen-xl px-4 py-3 mx-auto md:px-6">
+                <div class="flex items-center">
+                    <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+                        <li>
+                            <%= link_to "Especialidades", specialities_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                        </li>
+                        <li>
+                             <%= link_to 'Historial Medico', medical_histories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                        </li>
+                        <li>
+                            <%= link_to 'Diario', diaries_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-  <div id="medicals" class="min-w-full">
-    <%= render @medicals %>
+
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+
+          <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                   <%= link_to 'Registra Una Medico', new_medical_path %>
+                  </button>
+                  </a>
+                  <table class="min-w-full text-center">
+                    <thead class="border-b bg-gray-800">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Vterinaria
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Dueño
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Nombre
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Especie
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Mostrar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Editar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Eliminar
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                      <% @medicals.each do |medical| %>
+                        <tr class="bg-white border-b">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= medical.id %></td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= medical.speciality.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= medical.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= medical.telefono %>
+                          </td>
+                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= medical.direccion_residencia %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'MOSTRAR', medical %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Editar', edit_pet_path(medical), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                          </td>
+                      
+                        </tr class="bg-white border-b">
+                      <% end %>  
+                    </tbody>
+                  </table>
+                </div>
+              </div>
   </div>
 </div>

@@ -6,10 +6,17 @@
 
     <%= render @speciality %>
 
-    <%= link_to 'Edit this speciality', edit_speciality_path(@speciality), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this speciality', speciality_path(@speciality), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to specialities', specialities_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+      <%= link_to 'Edit this speciality', edit_speciality_path(@speciality),  class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"  %>
+    </button>
+
+    <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+      <%= button_to 'Destroy this speciality', speciality_path(@speciality), method: :delete,  class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"  %>
+    </button>
+
+    <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+     <%= link_to 'Back to specialities', specialities_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </button>
+
   </div>
 </div>
