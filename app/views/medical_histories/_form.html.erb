@@ -1,6 +1,6 @@
-<%= form_with(model: medical_history) do |form| %>
+<%= form_with(model: medical_history, class: "contents") do |form| %>
   <% if medical_history.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(medical_history.errors.count, "error") %> prohibited this medical_history from being saved:</h2>
 
       <ul>
@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :diaries_id %>
-    <%= form.text_field :diaries_id %>
+  <div class="my-5">
+    <%= form.label :diarie_id %>
+    <%= form.text_field :diarie_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :motivo_consulta %>
-    <%= form.text_field :motivo_consulta %>
+    <%= form.text_field :motivo_consulta, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :fecha_consulta %>
-    <%= form.text_field :fecha_consulta %>
+    <%= form.text_field :fecha_consulta, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :cdiagnostico %>
-    <%= form.text_field :cdiagnostico %>
+    <%= form.text_field :cdiagnostico, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :tratamiento_seguir %>
-    <%= form.text_field :tratamiento_seguir %>
+    <%= form.text_field :tratamiento_seguir, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

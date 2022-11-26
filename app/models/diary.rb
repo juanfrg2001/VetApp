@@ -1,4 +1,4 @@
 class Diary < ApplicationRecord
-  belongs_to :medicals
-  belongs_to :pacients
+  belongs_to :medical
+  belongs_to :pet
 end

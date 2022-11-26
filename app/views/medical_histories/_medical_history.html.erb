@@ -1,0 +1,32 @@
+<div id="<%= dom_id medical_history %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Diarie:</strong>
+    <%= medical_history.diarie_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Motivo consulta:</strong>
+    <%= medical_history.motivo_consulta %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Fecha consulta:</strong>
+    <%= medical_history.fecha_consulta %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cdiagnostico:</strong>
+    <%= medical_history.cdiagnostico %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tratamiento seguir:</strong>
+    <%= medical_history.tratamiento_seguir %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this medical history", medical_history, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this medical history', edit_medical_history_path(medical_history), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

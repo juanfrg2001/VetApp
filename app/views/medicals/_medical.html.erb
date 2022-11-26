@@ -1,0 +1,27 @@
+<div id="<%= dom_id medical %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Speciality:</strong>
+    <%= medical.speciality_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nombre:</strong>
+    <%= medical.nombre %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Telefono:</strong>
+    <%= medical.telefono %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Direccion residencia:</strong>
+    <%= medical.direccion_residencia %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this medical", medical, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this medical', edit_medical_path(medical), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

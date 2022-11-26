@@ -1,6 +1,6 @@
-<%= form_with(model: speciality) do |form| %>
+<%= form_with(model: speciality, class: "contents") do |form| %>
   <% if speciality.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(speciality.errors.count, "error") %> prohibited this speciality from being saved:</h2>
 
       <ul>
@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :locations_id %>
-    <%= form.text_field :locations_id %>
+  <div class="my-5">
+    <%= form.label :location_id %>
+    <%= form.text_field :location_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+    <%= form.text_field :nombre, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

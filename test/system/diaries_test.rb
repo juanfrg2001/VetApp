@@ -16,8 +16,8 @@ class DiariesTest < ApplicationSystemTestCase
 
     fill_in "Fecha", with: @diary.fecha
     fill_in "Horario", with: @diary.horario
-    fill_in "Medicals", with: @diary.medicals_id
-    fill_in "Pacients", with: @diary.pacients_id
+    fill_in "Medical", with: @diary.medical_id
+    fill_in "Pet", with: @diary.pet_id
     click_on "Create Diary"
 
     assert_text "Diary was successfully created"
@@ -30,8 +30,8 @@ class DiariesTest < ApplicationSystemTestCase
 
     fill_in "Fecha", with: @diary.fecha
     fill_in "Horario", with: @diary.horario
-    fill_in "Medicals", with: @diary.medicals_id
-    fill_in "Pacients", with: @diary.pacients_id
+    fill_in "Medical", with: @diary.medical_id
+    fill_in "Pet", with: @diary.pet_id
     click_on "Update Diary"
 
     assert_text "Diary was successfully updated"

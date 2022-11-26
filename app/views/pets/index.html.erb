@@ -1,0 +1,78 @@
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!--Container-->
+    <div class="container w-full mx-auto pt-20">
+
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+
+          <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                   <%= link_to 'Registra Una Mascota', new_pet_path %>
+                  </button>
+                  </a>
+                  <table class="min-w-full text-center">
+                    <thead class="border-b bg-gray-800">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Vterinaria
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Dueño
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Nombre
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Especie
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Mostrar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Editar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Eliminar
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                      <% @pets.each do |pet| %>
+                        <tr class="bg-white border-b">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= pet.location.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= pet.responsible.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= pet.nombre %>
+                          </td>
+                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= pet.species.raza %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Show', pet %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Edit this pet', edit_pet_path(pet), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                           <%= button_to 'Destroy this pet', pet_path(pet), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+                          </td>
+                        </tr class="bg-white border-b">
+                      <% end %>  
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+  </div>
+</div>

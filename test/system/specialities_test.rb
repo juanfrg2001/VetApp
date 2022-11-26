@@ -14,7 +14,7 @@ class SpecialitiesTest < ApplicationSystemTestCase
     visit specialities_url
     click_on "New Speciality"
 
-    fill_in "Locations", with: @speciality.locations_id
+    fill_in "Location", with: @speciality.location_id
     fill_in "Nombre", with: @speciality.nombre
     click_on "Create Speciality"
 
@@ -26,7 +26,7 @@ class SpecialitiesTest < ApplicationSystemTestCase
     visit specialities_url
     click_on "Edit", match: :first
 
-    fill_in "Locations", with: @speciality.locations_id
+    fill_in "Location", with: @speciality.location_id
     fill_in "Nombre", with: @speciality.nombre
     click_on "Update Speciality"
 

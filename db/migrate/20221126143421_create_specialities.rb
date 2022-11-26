@@ -1,7 +1,7 @@
 class CreateSpecialities < ActiveRecord::Migration[6.1]
   def change
     create_table :specialities do |t|
-      t.references :locations, null: false, foreign_key: true
+      t.references :location, null: false, foreign_key: true
       t.string :nombre
 
       t.timestamps

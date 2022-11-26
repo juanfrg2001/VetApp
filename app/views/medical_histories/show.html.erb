@@ -1,29 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
 
-<p>
-  <strong>Diaries:</strong>
-  <%= @medical_history.diaries_id %>
-</p>
+    <%= render @medical_history %>
 
-<p>
-  <strong>Motivo consulta:</strong>
-  <%= @medical_history.motivo_consulta %>
-</p>
-
-<p>
-  <strong>Fecha consulta:</strong>
-  <%= @medical_history.fecha_consulta %>
-</p>
-
-<p>
-  <strong>Cdiagnostico:</strong>
-  <%= @medical_history.cdiagnostico %>
-</p>
-
-<p>
-  <strong>Tratamiento seguir:</strong>
-  <%= @medical_history.tratamiento_seguir %>
-</p>
-
-<%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
-<%= link_to 'Back', medical_histories_path %>
+    <%= link_to 'Edit this medical_history', edit_medical_history_path(@medical_history), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this medical_history', medical_history_path(@medical_history), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back to medical_histories', medical_histories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

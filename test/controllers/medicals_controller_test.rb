@@ -17,7 +17,7 @@ class MedicalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create medical" do
     assert_difference('Medical.count') do
-      post medicals_url, params: { medical: { direccion_residencia: @medical.direccion_residencia, nombre: @medical.nombre, specialities_id: @medical.specialities_id, telefono: @medical.telefono } }
+      post medicals_url, params: { medical: { direccion_residencia: @medical.direccion_residencia, nombre: @medical.nombre, speciality_id: @medical.speciality_id, telefono: @medical.telefono } }
     end
 
     assert_redirected_to medical_url(Medical.last)
@@ -34,7 +34,7 @@ class MedicalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update medical" do
-    patch medical_url(@medical), params: { medical: { direccion_residencia: @medical.direccion_residencia, nombre: @medical.nombre, specialities_id: @medical.specialities_id, telefono: @medical.telefono } }
+    patch medical_url(@medical), params: { medical: { direccion_residencia: @medical.direccion_residencia, nombre: @medical.nombre, speciality_id: @medical.speciality_id, telefono: @medical.telefono } }
     assert_redirected_to medical_url(@medical)
   end
 

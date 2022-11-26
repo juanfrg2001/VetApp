@@ -16,7 +16,7 @@ class MedicalsTest < ApplicationSystemTestCase
 
     fill_in "Direccion residencia", with: @medical.direccion_residencia
     fill_in "Nombre", with: @medical.nombre
-    fill_in "Specialities", with: @medical.specialities_id
+    fill_in "Speciality", with: @medical.speciality_id
     fill_in "Telefono", with: @medical.telefono
     click_on "Create Medical"
 
@@ -30,7 +30,7 @@ class MedicalsTest < ApplicationSystemTestCase
 
     fill_in "Direccion residencia", with: @medical.direccion_residencia
     fill_in "Nombre", with: @medical.nombre
-    fill_in "Specialities", with: @medical.specialities_id
+    fill_in "Speciality", with: @medical.speciality_id
     fill_in "Telefono", with: @medical.telefono
     click_on "Update Medical"
 

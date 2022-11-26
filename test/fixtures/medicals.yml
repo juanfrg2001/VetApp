@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  specialities: one
+  speciality: one
   nombre: MyString
   telefono: MyString
   direccion_residencia: MyString
 
 two:
-  specialities: two
+  speciality: two
   nombre: MyString
   telefono: MyString
   direccion_residencia: MyString

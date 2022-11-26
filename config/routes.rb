@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
-  resources :medical_histories
   resources :diaries
+  resources :specialities
+  resources :medicals
+  resources :pets
+  resources :medical_histories
+  resources :test2s
   resources :pacients
+  root 'static_pages#index'
   resources :species
   resources :responsibles
-  resources :medicals
-  resources :specialities
   resources :locations
   resources :especies
   resources :medicos

@@ -1,7 +1,7 @@
 class CreateMedicalHistories < ActiveRecord::Migration[6.1]
   def change
     create_table :medical_histories do |t|
-      t.references :diaries, null: false, foreign_key: true
+      t.references :diarie, null: false, foreign_key: true
       t.string :motivo_consulta
       t.string :fecha_consulta
       t.string :cdiagnostico

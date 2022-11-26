@@ -1,0 +1,32 @@
+
+
+
+
+
+<div id="<%= dom_id pet %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Location:</strong>
+    <%= pet.location_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Responsible:</strong>
+    <%= pet.responsible_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Species:</strong>
+    <%= pet.species_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nombre:</strong>
+    <%= pet.nombre %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this pet", pet, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this pet', edit_pet_path(pet), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

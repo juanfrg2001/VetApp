@@ -65,6 +65,6 @@ class SpecialitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def speciality_params
-      params.require(:speciality).permit(:locations_id, :nombre)
+      params.require(:speciality).permit(:location_id, :nombre)
     end
 end

@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
 
-<p>
-  <strong>Locations:</strong>
-  <%= @speciality.locations_id %>
-</p>
+    <%= render @speciality %>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @speciality.nombre %>
-</p>
-
-<%= link_to 'Edit', edit_speciality_path(@speciality) %> |
-<%= link_to 'Back', specialities_path %>
+    <%= link_to 'Edit this speciality', edit_speciality_path(@speciality), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this speciality', speciality_path(@speciality), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back to specialities', specialities_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

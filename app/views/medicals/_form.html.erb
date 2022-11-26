@@ -1,6 +1,6 @@
-<%= form_with(model: medical) do |form| %>
+<%= form_with(model: medical, class: "contents") do |form| %>
   <% if medical.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(medical.errors.count, "error") %> prohibited this medical from being saved:</h2>
 
       <ul>
@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :specialities_id %>
-    <%= form.text_field :specialities_id %>
+  <div class="my-5">
+    <%= form.label :speciality_id %>
+    <%= form.text_field :speciality_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+    <%= form.text_field :nombre, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :telefono %>
-    <%= form.text_field :telefono %>
+    <%= form.text_field :telefono, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
+  <div class="my-5">
     <%= form.label :direccion_residencia %>
-    <%= form.text_field :direccion_residencia %>
+    <%= form.text_field :direccion_residencia, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

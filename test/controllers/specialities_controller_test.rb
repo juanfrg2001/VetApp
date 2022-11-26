@@ -17,7 +17,7 @@ class SpecialitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create speciality" do
     assert_difference('Speciality.count') do
-      post specialities_url, params: { speciality: { locations_id: @speciality.locations_id, nombre: @speciality.nombre } }
+      post specialities_url, params: { speciality: { location_id: @speciality.location_id, nombre: @speciality.nombre } }
     end
 
     assert_redirected_to speciality_url(Speciality.last)
@@ -34,7 +34,7 @@ class SpecialitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update speciality" do
-    patch speciality_url(@speciality), params: { speciality: { locations_id: @speciality.locations_id, nombre: @speciality.nombre } }
+    patch speciality_url(@speciality), params: { speciality: { location_id: @speciality.location_id, nombre: @speciality.nombre } }
     assert_redirected_to speciality_url(@speciality)
   end
 

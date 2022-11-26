@@ -14,9 +14,9 @@ class PacientsTest < ApplicationSystemTestCase
     visit pacients_url
     click_on "New Pacient"
 
-    fill_in "Locations", with: @pacient.locations_id
-    fill_in "Responsibles", with: @pacient.responsibles_id
-    fill_in "Species", with: @pacient.species_id
+    fill_in "Location", with: @pacient.location_id
+    fill_in "Responsible", with: @pacient.responsible_id
+    fill_in "Specie", with: @pacient.specie_id
     click_on "Create Pacient"
 
     assert_text "Pacient was successfully created"
@@ -27,9 +27,9 @@ class PacientsTest < ApplicationSystemTestCase
     visit pacients_url
     click_on "Edit", match: :first
 
-    fill_in "Locations", with: @pacient.locations_id
-    fill_in "Responsibles", with: @pacient.responsibles_id
-    fill_in "Species", with: @pacient.species_id
+    fill_in "Location", with: @pacient.location_id
+    fill_in "Responsible", with: @pacient.responsible_id
+    fill_in "Specie", with: @pacient.specie_id
     click_on "Update Pacient"
 
     assert_text "Pacient was successfully updated"
