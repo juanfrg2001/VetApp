@@ -1,0 +1,49 @@
+require "application_system_test_case"
+
+class SpeciesTest < ApplicationSystemTestCase
+  setup do
+    @species = species(:one)
+  end
+
+  test "visiting the index" do
+    visit species_url
+    assert_selector "h1", text: "Species"
+  end
+
+  test "creating a Species" do
+    visit species_url
+    click_on "New Species"
+
+    fill_in "Edad", with: @species.edad
+    fill_in "Esterilizado", with: @species.esterilizado
+    fill_in "Genero", with: @species.genero
+    fill_in "Raza", with: @species.raza
+    click_on "Create Species"
+
+    assert_text "Species was successfully created"
+    click_on "Back"
+  end
+
+  test "updating a Species" do
+    visit species_url
+    click_on "Edit", match: :first
+
+    fill_in "Edad", with: @species.edad
+    fill_in "Esterilizado", with: @species.esterilizado
+    fill_in "Genero", with: @species.genero
+    fill_in "Raza", with: @species.raza
+    click_on "Update Species"
+
+    assert_text "Species was successfully updated"
+    click_on "Back"
+  end
+
+  test "destroying a Species" do
+    visit species_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
+
+    assert_text "Species was successfully destroyed"
+  end
+end

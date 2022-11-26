@@ -1,0 +1,42 @@
+<%= form_with(model: medical_history) do |form| %>
+  <% if medical_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medical_history.errors.count, "error") %> prohibited this medical_history from being saved:</h2>
+
+      <ul>
+        <% medical_history.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :diaries_id %>
+    <%= form.text_field :diaries_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :motivo_consulta %>
+    <%= form.text_field :motivo_consulta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_consulta %>
+    <%= form.text_field :fecha_consulta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cdiagnostico %>
+    <%= form.text_field :cdiagnostico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tratamiento_seguir %>
+    <%= form.text_field :tratamiento_seguir %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

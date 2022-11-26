@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Diaries:</strong>
+  <%= @medical_history.diaries_id %>
+</p>
+
+<p>
+  <strong>Motivo consulta:</strong>
+  <%= @medical_history.motivo_consulta %>
+</p>
+
+<p>
+  <strong>Fecha consulta:</strong>
+  <%= @medical_history.fecha_consulta %>
+</p>
+
+<p>
+  <strong>Cdiagnostico:</strong>
+  <%= @medical_history.cdiagnostico %>
+</p>
+
+<p>
+  <strong>Tratamiento seguir:</strong>
+  <%= @medical_history.tratamiento_seguir %>
+</p>
+
+<%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
+<%= link_to 'Back', medical_histories_path %>

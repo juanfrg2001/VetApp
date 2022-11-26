@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medicals:</strong>
+  <%= @diary.medicals_id %>
+</p>
+
+<p>
+  <strong>Pacients:</strong>
+  <%= @diary.pacients_id %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @diary.horario %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @diary.fecha %>
+</p>
+
+<%= link_to 'Edit', edit_diary_path(@diary) %> |
+<%= link_to 'Back', diaries_path %>

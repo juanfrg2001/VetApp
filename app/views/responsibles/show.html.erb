@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @responsible.nombre %>
+</p>
+
+<p>
+  <strong>Cedula:</strong>
+  <%= @responsible.cedula %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @responsible.telefono %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @responsible.direccion %>
+</p>
+
+<%= link_to 'Edit', edit_responsible_path(@responsible) %> |
+<%= link_to 'Back', responsibles_path %>
