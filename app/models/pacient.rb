@@ -1,5 +1,5 @@
 class Pacient < ApplicationRecord
-  belongs_to :locations
-  belongs_to :responsibles
-  belongs_to :species
+  belongs_to :location
+  belongs_to :responsible
+  belongs_to :specie
 end

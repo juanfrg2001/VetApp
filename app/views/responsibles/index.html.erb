@@ -1,33 +1,156 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Responsibles</h1>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!--Container-->
+    <div class="container w-full mx-auto pt-20">
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Cedula</th>
-      <th>Telefono</th>
-      <th>Direccion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
 
-  <tbody>
-    <% @responsibles.each do |responsible| %>
-      <tr>
-        <td><%= responsible.nombre %></td>
-        <td><%= responsible.cedula %></td>
-        <td><%= responsible.telefono %></td>
-        <td><%= responsible.direccion %></td>
-        <td><%= link_to 'Show', responsible %></td>
-        <td><%= link_to 'Edit', edit_responsible_path(responsible) %></td>
-        <td><%= link_to 'Destroy', responsible, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <%= link_to 'Nuevo Dueño', new_responsible_path %>
+                  </button>
+                  <table class="min-w-full text-center">
+                    <thead class="border-b bg-gray-800">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Nombre
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Cedula
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Telefono
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Direccion
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Mostrar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Editar
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Eliminar
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                      <% @responsibles.each do |responsible| %>
+                        <tr class="bg-white border-b">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= responsible.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= responsible.cedula %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= responsible.telefono %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= responsible.direccion %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Mostrar', responsible %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Editar', edit_responsible_path(responsible) %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= link_to 'Eliminar', responsible, method: :delete, data: { confirm: 'Are you sure?' } %>
+                          </td>
+                        </tr class="bg-white border-b">
+                      <% end %>  
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+  </div>
+</div>
 
-<br>
+            <!--Console Content-->
 
-<%= link_to 'New Responsible', new_responsible_path %>
+            
+          
+
+            <!--Divider-->
+            <hr class="border-b-2 border-gray-400 my-8 mx-4">
+
+            <!--/ Console Content-->
+
+        </div>
+
+
+    </div>
+    <!--/container-->
+
+    <script>
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+    var userMenuDiv = document.getElementById("userMenu");
+    var userMenu = document.getElementById("userButton");
+
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //User Menu
+        if (!checkParent(target, userMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, userMenu)) {
+                // click on the link
+                if (userMenuDiv.classList.contains("invisible")) {
+                    userMenuDiv.classList.remove("invisible");
+                } else { userMenuDiv.classList.add("invisible"); }
+            } else {
+                // click both outside link and outside menu, hide menu
+                userMenuDiv.classList.add("invisible");
+            }
+        }
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, navMenu)) {
+                // click on the link
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else { navMenuDiv.classList.add("hidden"); }
+            } else {
+                // click both outside link and outside menu, hide menu
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) { return true; }
+            t = t.parentNode;
+        }
+        return false;
+    }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
