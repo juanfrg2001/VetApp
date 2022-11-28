@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_26_143924) do
+ActiveRecord::Schema.define(version: 2022_11_27_231042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(version: 2022_11_26_143924) do
     t.index ["pet_id"], name: "index_diaries_on_pet_id"
   end
 
-  create_table "especialidads", force: :cascade do |t|
-    t.bigint "sede_id", null: false
-    t.string "nombre"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["sede_id"], name: "index_especialidads_on_sede_id"
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string "nombre"
     t.string "localidad"
@@ -42,14 +34,14 @@ ActiveRecord::Schema.define(version: 2022_11_26_143924) do
   end
 
   create_table "medical_histories", force: :cascade do |t|
-    t.bigint "diarie_id", null: false
+    t.bigint "diary_id", null: false
     t.string "motivo_consulta"
     t.string "fecha_consulta"
     t.string "cdiagnostico"
     t.string "tratamiento_seguir"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["diarie_id"], name: "index_medical_histories_on_diarie_id"
+    t.index ["diary_id"], name: "index_medical_histories_on_diary_id"
   end
 
   create_table "medicals", force: :cascade do |t|
@@ -60,17 +52,6 @@ ActiveRecord::Schema.define(version: 2022_11_26_143924) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["speciality_id"], name: "index_medicals_on_speciality_id"
-  end
-
-  create_table "pacients", force: :cascade do |t|
-    t.bigint "locations_id", null: false
-    t.bigint "responsibles_id", null: false
-    t.bigint "species_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["locations_id"], name: "index_pacients_on_locations_id"
-    t.index ["responsibles_id"], name: "index_pacients_on_responsibles_id"
-    t.index ["species_id"], name: "index_pacients_on_species_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -90,13 +71,6 @@ ActiveRecord::Schema.define(version: 2022_11_26_143924) do
     t.string "cedula"
     t.string "telefono"
     t.string "direccion"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sedes", force: :cascade do |t|
-    t.string "nombre"
-    t.string "localidad"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -129,12 +103,9 @@ ActiveRecord::Schema.define(version: 2022_11_26_143924) do
     t.index ["species_id"], name: "index_test2s_on_species_id"
   end
 
-  add_foreign_key "diaries", "medicals"
   add_foreign_key "diaries", "pets"
-  add_foreign_key "especialidads", "sedes"
-  add_foreign_key "pacients", "locations", column: "locations_id"
-  add_foreign_key "pacients", "responsibles", column: "responsibles_id"
-  add_foreign_key "pacients", "species"
+  add_foreign_key "medical_histories", "diaries"
+  add_foreign_key "medicals", "specialities"
   add_foreign_key "pets", "locations"
   add_foreign_key "pets", "responsibles"
   add_foreign_key "pets", "species"

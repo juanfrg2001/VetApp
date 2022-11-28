@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  diarie: one
+  diary: one
   motivo_consulta: MyString
   fecha_consulta: MyString
   cdiagnostico: MyString
   tratamiento_seguir: MyString
 
 two:
-  diarie: two
+  diary: two
   motivo_consulta: MyString
   fecha_consulta: MyString
   cdiagnostico: MyString

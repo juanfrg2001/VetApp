@@ -1,3 +1,3 @@
 class MedicalHistory < ApplicationRecord
-  belongs_to :diarie
+  belongs_to :diary
 end

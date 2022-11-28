@@ -1,4 +1,3 @@
-
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
     <!--Container-->
     <div class="container w-full mx-auto pt-20">
@@ -10,7 +9,7 @@
               <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    <%= link_to 'New Location', new_location_path %>
+                    <%= link_to 'Nuevo Medico', new_medical_path %>
                   </button>
                   <table class="min-w-full text-center">
                     <thead class="border-b bg-gray-800">
@@ -30,42 +29,25 @@
                         <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                           Direccion
                         </th>
-                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                          Mostrar
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                          Editar
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                          Eliminar
-                        </th>
                       </tr>
                     </thead class="border-b">
                     <tbody>
                       <p id="notice"><%= notice %></p>
                         <tr class="bg-white border-b">
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> <%= medical.id %></td>
                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             <%= medical.speciality.nombre %>
                           </td>
                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             <%= medical.nombre %>
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                             <%= medical.telefono %>
+                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= medical.telefono %>
                           </td>
                           <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                           <%= medical.direccion_residencia %>
+                            <%= medical.direccion_residencia %>
                           </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <%= link_to "Show this medical", medical, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <%= link_to 'Edit this medical', edit_medical_path(medical), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <%= link_to 'Destroy', medical, method: :delete, data: { confirm: 'Are you sure?' } %>
-                          </td>
+  
                         </tr class="bg-white border-b">
                     </tbody>
                   </table>
@@ -147,4 +129,3 @@
 </body>
 
 </html>
-

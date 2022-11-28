@@ -17,7 +17,7 @@ class MedicalHistoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create medical_history" do
     assert_difference('MedicalHistory.count') do
-      post medical_histories_url, params: { medical_history: { cdiagnostico: @medical_history.cdiagnostico, diarie_id: @medical_history.diarie_id, fecha_consulta: @medical_history.fecha_consulta, motivo_consulta: @medical_history.motivo_consulta, tratamiento_seguir: @medical_history.tratamiento_seguir } }
+      post medical_histories_url, params: { medical_history: { cdiagnostico: @medical_history.cdiagnostico, diary_id: @medical_history.diary_id, fecha_consulta: @medical_history.fecha_consulta, motivo_consulta: @medical_history.motivo_consulta, tratamiento_seguir: @medical_history.tratamiento_seguir } }
     end
 
     assert_redirected_to medical_history_url(MedicalHistory.last)
@@ -34,7 +34,7 @@ class MedicalHistoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update medical_history" do
-    patch medical_history_url(@medical_history), params: { medical_history: { cdiagnostico: @medical_history.cdiagnostico, diarie_id: @medical_history.diarie_id, fecha_consulta: @medical_history.fecha_consulta, motivo_consulta: @medical_history.motivo_consulta, tratamiento_seguir: @medical_history.tratamiento_seguir } }
+    patch medical_history_url(@medical_history), params: { medical_history: { cdiagnostico: @medical_history.cdiagnostico, diary_id: @medical_history.diary_id, fecha_consulta: @medical_history.fecha_consulta, motivo_consulta: @medical_history.motivo_consulta, tratamiento_seguir: @medical_history.tratamiento_seguir } }
     assert_redirected_to medical_history_url(@medical_history)
   end
 

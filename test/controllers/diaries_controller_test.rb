@@ -6,12 +6,15 @@ class DiariesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get diaries_url
+    get articles_url
+    assert_template :index
     assert_response :success
+ 
   end
 
   test "should get new" do
     get new_diary_url
+    assert_template :new
     assert_response :success
   end
 

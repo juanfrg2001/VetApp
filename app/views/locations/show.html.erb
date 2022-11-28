@@ -1,14 +1,141 @@
-<p id="notice"><%= notice %></p>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!--Container-->
+    <div class="container w-full mx-auto pt-20">
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @location.nombre %>
-</p>
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
 
-<p>
-  <strong>Localidad:</strong>
-  <%= @location.localidad %>
-</p>
+          <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <%= link_to 'New Location', new_location_path %>
+                  </button>
+                  <table class="min-w-full text-center">
+                    <thead class="border-b bg-gray-800">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          #
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Localidad
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Responsable
+                        </th>
+                         <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Raza
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                          Nombre
+                        </th>
+                      </tr>
+                    </thead class="border-b">
+                    <tbody>
+                      <p id="notice"><%= notice %></p>
+                        <tr class="bg-white border-b">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= @location.nombre %>
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            <%= @location.localidad %>
+                          </td>
+  
+                        </tr class="bg-white border-b">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+            <!--Console Content-->
+
+            
+          
+
+            <!--Divider-->
+            <hr class="border-b-2 border-gray-400 my-8 mx-4">
+             <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+              <%= link_to 'Editar', edit_location_path(@location),  class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"  %>
+            </button>
+
+            <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+              <%= button_to 'Eliminar', locations_path(@location), method: :delete,  class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"  %>
+            </button>
+
+            <button class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">
+            <%= link_to 'Atras', locations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+            </button>
+
+            <!--/ Console Content-->
+
+        </div>
+
+
+    </div>
+    <!--/container-->
+
+    <script>
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+    var userMenuDiv = document.getElementById("userMenu");
+    var userMenu = document.getElementById("userButton");
+
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+
+    function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //User Menu
+        if (!checkParent(target, userMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, userMenu)) {
+                // click on the link
+                if (userMenuDiv.classList.contains("invisible")) {
+                    userMenuDiv.classList.remove("invisible");
+                } else { userMenuDiv.classList.add("invisible"); }
+            } else {
+                // click both outside link and outside menu, hide menu
+                userMenuDiv.classList.add("invisible");
+            }
+        }
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, navMenu)) {
+                // click on the link
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else { navMenuDiv.classList.add("hidden"); }
+            } else {
+                // click both outside link and outside menu, hide menu
+                navMenuDiv.classList.add("hidden");
+            }
+        }
+
+    }
+
+    function checkParent(t, elm) {
+        while (t.parentNode) {
+            if (t == elm) { return true; }
+            t = t.parentNode;
+        }
+        return false;
+    }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+

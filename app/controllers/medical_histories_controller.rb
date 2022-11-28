@@ -65,6 +65,6 @@ class MedicalHistoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medical_history_params
-      params.require(:medical_history).permit(:diarie_id, :motivo_consulta, :fecha_consulta, :cdiagnostico, :tratamiento_seguir)
+      params.require(:medical_history).permit(:diary_id, :motivo_consulta, :fecha_consulta, :cdiagnostico, :tratamiento_seguir)
     end
 end

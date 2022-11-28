@@ -15,7 +15,7 @@ class MedicalHistoriesTest < ApplicationSystemTestCase
     click_on "New Medical History"
 
     fill_in "Cdiagnostico", with: @medical_history.cdiagnostico
-    fill_in "Diarie", with: @medical_history.diarie_id
+    fill_in "Diary", with: @medical_history.diary_id
     fill_in "Fecha consulta", with: @medical_history.fecha_consulta
     fill_in "Motivo consulta", with: @medical_history.motivo_consulta
     fill_in "Tratamiento seguir", with: @medical_history.tratamiento_seguir
@@ -30,7 +30,7 @@ class MedicalHistoriesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Cdiagnostico", with: @medical_history.cdiagnostico
-    fill_in "Diarie", with: @medical_history.diarie_id
+    fill_in "Diary", with: @medical_history.diary_id
     fill_in "Fecha consulta", with: @medical_history.fecha_consulta
     fill_in "Motivo consulta", with: @medical_history.motivo_consulta
     fill_in "Tratamiento seguir", with: @medical_history.tratamiento_seguir
